@@ -101,15 +101,52 @@ goto label9
 goto label8
 label9:
 ldc 1
+ldc 1
+if_icmpne label28
+goto label27
+label28:
+goto label25
+label27:
+goto label26
+label26:
+goto label24
+label25:
+goto label23
+label24:
+iload 3
+iload 3
+if_icmpeq label29
+goto label23
+label29:
+goto label21
+label23:
+goto label22
+label22:
+goto label18
+label21:
+goto label19
+goto label18
+label19:
+ldc 1
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+getstatic java/lang/System/out Ljava/io/PrintStream;
+swap
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+goto label20
+label18:
+label20:
+ldc 2
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 getstatic java/lang/System/out Ljava/io/PrintStream;
 swap
 invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 goto label10
 label8:
-ldc 2
 ldc 1
+ldc 1
+ldc 2
 imul
+iadd
 invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
 getstatic java/lang/System/out Ljava/io/PrintStream;
 swap

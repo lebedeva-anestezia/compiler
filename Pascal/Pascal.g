@@ -126,17 +126,17 @@ ifOperation
 		code += "goto label" + localLabel + "\n"; 
 		code += "label" + (localLabel + 1) + ":\n";
 	}
-	(statement)* 'end' {
-		code += "goto label" + (localLabel + 2) + "\n";
-	}( {
-		code += "label" + localLabel + ":\n";
-	}(
-	';'
-	| 'else' 'begin' 
-	(statement)* 'end;'
-	)) {
-		code += "label" + (localLabel + 2) + ":\n";
-	}
+	(statement)* (
+		{
+			code += "goto label" + (localLabel + 2) + "\n";
+			code += "label" + localLabel + ":\n";
+		}(
+		'end;' 
+		| 'end' 'else' 'begin' 
+		(statement)* 'end;'
+		)) {
+			code += "label" + (localLabel + 2) + ":\n";
+		}	
 ;
 
 logicExpression[int isTrue, int isFalse]
