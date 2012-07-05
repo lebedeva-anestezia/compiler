@@ -7,7 +7,7 @@ return
 .end method
 .method static public main([Ljava/lang/String;)V
 .limit stack 5
-.limit locals 5
+.limit locals 6
 new java/io/BufferedReader
 dup
 new java/io/InputStreamReader
@@ -16,8 +16,34 @@ getstatic java/lang/System/in Ljava/io/InputStream;
 invokenonvirtual java/io/InputStreamReader/<init>(Ljava/io/InputStream;)V
 invokenonvirtual java/io/BufferedReader/<init>(Ljava/io/Reader;)V
 astore 2
-ldc 3
+ldc 2
 istore 3
+iload 3
+ldc 2
+imul
+ldc 1
+isub
+istore 4
+iload 4
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+getstatic java/lang/System/out Ljava/io/PrintStream;
+swap
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
+ldc 5
+ldc 2
+imul
+ldc 10
+ldc 3
+idiv
+isub
+ldc 1
+iadd
+istore 5
+iload 5
+invokestatic java/lang/String/valueOf(I)Ljava/lang/String;
+getstatic java/lang/System/out Ljava/io/PrintStream;
+swap
+invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V
 label3:
 iload 3
 ldc 0

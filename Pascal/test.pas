@@ -2,9 +2,14 @@ program test;
 var
 	x : Integer;
 	y : Integer;
+	z : Integer;
 
 begin
-	x := 3;
+	x := 2;
+	y := x * 2 - 1;
+	writeln(y);
+	z := 5 * 2 - 10 div 3 + 1;
+	writeln(z);
 	while x > 0 do
 	begin
 		x := x - 1;
