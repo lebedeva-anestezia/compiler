@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 00:17:18
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 16:19:16
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class PascalLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -37,13 +36,16 @@ public class PascalLexer extends Lexer {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
     public static final int ID=4;
     public static final int WRITE=5;
     public static final int WRITELN=6;
     public static final int TRUE=7;
     public static final int FALSE=8;
     public static final int NUMBER=9;
-    public static final int WS=10;
+    public static final int READ=10;
+    public static final int WS=11;
 
     // delegates
     // delegators
@@ -58,36 +60,16 @@ public class PascalLexer extends Lexer {
     }
     public String getGrammarFileName() { return "Pascal.g"; }
 
-    // $ANTLR start "T__11"
-    public final void mT__11() throws RecognitionException {
+    // $ANTLR start "T__12"
+    public final void mT__12() throws RecognitionException {
         try {
-            int _type = T__11;
+            int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // Pascal.g:3:7: ( 'program ' )
             // Pascal.g:3:9: 'program '
             {
             match("program "); 
 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__11"
-
-    // $ANTLR start "T__12"
-    public final void mT__12() throws RecognitionException {
-        try {
-            int _type = T__12;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:4:7: ( ';' )
-            // Pascal.g:4:9: ';'
-            {
-            match(';'); 
 
             }
 
@@ -104,11 +86,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:5:7: ( 'var' )
-            // Pascal.g:5:9: 'var'
+            // Pascal.g:4:7: ( ';' )
+            // Pascal.g:4:9: ';'
             {
-            match("var"); 
-
+            match(';'); 
 
             }
 
@@ -125,10 +106,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:6:7: ( 'begin' )
-            // Pascal.g:6:9: 'begin'
+            // Pascal.g:5:7: ( 'var' )
+            // Pascal.g:5:9: 'var'
             {
-            match("begin"); 
+            match("var"); 
 
 
             }
@@ -146,10 +127,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:7:7: ( 'end.' )
-            // Pascal.g:7:9: 'end.'
+            // Pascal.g:6:7: ( 'begin' )
+            // Pascal.g:6:9: 'begin'
             {
-            match("end."); 
+            match("begin"); 
 
 
             }
@@ -167,10 +148,11 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:8:7: ( '(' )
-            // Pascal.g:8:9: '('
+            // Pascal.g:7:7: ( 'end.' )
+            // Pascal.g:7:9: 'end.'
             {
-            match('('); 
+            match("end."); 
+
 
             }
 
@@ -187,10 +169,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:9:7: ( ')' )
-            // Pascal.g:9:9: ')'
+            // Pascal.g:8:7: ( '(' )
+            // Pascal.g:8:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -207,11 +189,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:10:7: ( 'while' )
-            // Pascal.g:10:9: 'while'
+            // Pascal.g:9:7: ( ')' )
+            // Pascal.g:9:9: ')'
             {
-            match("while"); 
-
+            match(')'); 
 
             }
 
@@ -228,10 +209,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:11:7: ( 'do' )
-            // Pascal.g:11:9: 'do'
+            // Pascal.g:10:7: ( 'while' )
+            // Pascal.g:10:9: 'while'
             {
-            match("do"); 
+            match("while"); 
 
 
             }
@@ -249,10 +230,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:12:7: ( 'end;' )
-            // Pascal.g:12:9: 'end;'
+            // Pascal.g:11:7: ( 'do' )
+            // Pascal.g:11:9: 'do'
             {
-            match("end;"); 
+            match("do"); 
 
 
             }
@@ -270,10 +251,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:13:7: ( 'if' )
-            // Pascal.g:13:9: 'if'
+            // Pascal.g:12:7: ( 'end;' )
+            // Pascal.g:12:9: 'end;'
             {
-            match("if"); 
+            match("end;"); 
 
 
             }
@@ -291,10 +272,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:14:7: ( 'then' )
-            // Pascal.g:14:9: 'then'
+            // Pascal.g:13:7: ( 'if' )
+            // Pascal.g:13:9: 'if'
             {
-            match("then"); 
+            match("if"); 
 
 
             }
@@ -312,10 +293,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:15:7: ( 'end' )
-            // Pascal.g:15:9: 'end'
+            // Pascal.g:14:7: ( 'then' )
+            // Pascal.g:14:9: 'then'
             {
-            match("end"); 
+            match("then"); 
 
 
             }
@@ -333,10 +314,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:16:7: ( 'else' )
-            // Pascal.g:16:9: 'else'
+            // Pascal.g:15:7: ( 'end' )
+            // Pascal.g:15:9: 'end'
             {
-            match("else"); 
+            match("end"); 
 
 
             }
@@ -354,10 +335,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:17:7: ( 'or' )
-            // Pascal.g:17:9: 'or'
+            // Pascal.g:16:7: ( 'else' )
+            // Pascal.g:16:9: 'else'
             {
-            match("or"); 
+            match("else"); 
 
 
             }
@@ -375,10 +356,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:18:7: ( 'and' )
-            // Pascal.g:18:9: 'and'
+            // Pascal.g:17:7: ( 'or' )
+            // Pascal.g:17:9: 'or'
             {
-            match("and"); 
+            match("or"); 
 
 
             }
@@ -396,10 +377,11 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:19:7: ( '>' )
-            // Pascal.g:19:9: '>'
+            // Pascal.g:18:7: ( 'and' )
+            // Pascal.g:18:9: 'and'
             {
-            match('>'); 
+            match("and"); 
+
 
             }
 
@@ -416,10 +398,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:20:7: ( '<' )
-            // Pascal.g:20:9: '<'
+            // Pascal.g:19:7: ( '>' )
+            // Pascal.g:19:9: '>'
             {
-            match('<'); 
+            match('>'); 
 
             }
 
@@ -436,10 +418,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:21:7: ( '=' )
-            // Pascal.g:21:9: '='
+            // Pascal.g:20:7: ( '<' )
+            // Pascal.g:20:9: '<'
             {
-            match('='); 
+            match('<'); 
 
             }
 
@@ -456,11 +438,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:22:7: ( '>=' )
-            // Pascal.g:22:9: '>='
+            // Pascal.g:21:7: ( '=' )
+            // Pascal.g:21:9: '='
             {
-            match(">="); 
-
+            match('='); 
 
             }
 
@@ -477,10 +458,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:23:7: ( '<=' )
-            // Pascal.g:23:9: '<='
+            // Pascal.g:22:7: ( '>=' )
+            // Pascal.g:22:9: '>='
             {
-            match("<="); 
+            match(">="); 
 
 
             }
@@ -498,10 +479,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:24:7: ( '<>' )
-            // Pascal.g:24:9: '<>'
+            // Pascal.g:23:7: ( '<=' )
+            // Pascal.g:23:9: '<='
             {
-            match("<>"); 
+            match("<="); 
 
 
             }
@@ -519,10 +500,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:25:7: ( 'not (' )
-            // Pascal.g:25:9: 'not ('
+            // Pascal.g:24:7: ( '<>' )
+            // Pascal.g:24:9: '<>'
             {
-            match("not ("); 
+            match("<>"); 
 
 
             }
@@ -540,10 +521,11 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:26:7: ( ':' )
-            // Pascal.g:26:9: ':'
+            // Pascal.g:25:7: ( 'not (' )
+            // Pascal.g:25:9: 'not ('
             {
-            match(':'); 
+            match("not ("); 
+
 
             }
 
@@ -560,11 +542,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:27:7: ( 'Integer' )
-            // Pascal.g:27:9: 'Integer'
+            // Pascal.g:26:7: ( ':' )
+            // Pascal.g:26:9: ':'
             {
-            match("Integer"); 
-
+            match(':'); 
 
             }
 
@@ -581,10 +562,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:28:7: ( ':=' )
-            // Pascal.g:28:9: ':='
+            // Pascal.g:27:7: ( 'Integer' )
+            // Pascal.g:27:9: 'Integer'
             {
-            match(":="); 
+            match("Integer"); 
 
 
             }
@@ -602,10 +583,11 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:29:7: ( '+' )
-            // Pascal.g:29:9: '+'
+            // Pascal.g:28:7: ( ':=' )
+            // Pascal.g:28:9: ':='
             {
-            match('+'); 
+            match(":="); 
+
 
             }
 
@@ -622,10 +604,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:30:7: ( '-' )
-            // Pascal.g:30:9: '-'
+            // Pascal.g:29:7: ( '+' )
+            // Pascal.g:29:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -642,10 +624,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:31:7: ( '*' )
-            // Pascal.g:31:9: '*'
+            // Pascal.g:30:7: ( '-' )
+            // Pascal.g:30:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -662,6 +644,26 @@ public class PascalLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Pascal.g:31:7: ( '*' )
+            // Pascal.g:31:9: '*'
+            {
+            match('*'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__40"
+
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
+        try {
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
             // Pascal.g:32:7: ( 'div' )
             // Pascal.g:32:9: 'div'
             {
@@ -676,15 +678,36 @@ public class PascalLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__40"
+    // $ANTLR end "T__41"
+
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
+        try {
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Pascal.g:33:7: ( '()' )
+            // Pascal.g:33:9: '()'
+            {
+            match("()"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__42"
 
     // $ANTLR start "WRITE"
     public final void mWRITE() throws RecognitionException {
         try {
             int _type = WRITE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:284:7: ( 'write' )
-            // Pascal.g:284:9: 'write'
+            // Pascal.g:292:7: ( 'write' )
+            // Pascal.g:292:9: 'write'
             {
             match("write"); 
 
@@ -704,8 +727,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = WRITELN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:285:9: ( 'writeln' )
-            // Pascal.g:285:11: 'writeln'
+            // Pascal.g:293:9: ( 'writeln' )
+            // Pascal.g:293:11: 'writeln'
             {
             match("writeln"); 
 
@@ -720,13 +743,34 @@ public class PascalLexer extends Lexer {
     }
     // $ANTLR end "WRITELN"
 
+    // $ANTLR start "READ"
+    public final void mREAD() throws RecognitionException {
+        try {
+            int _type = READ;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // Pascal.g:294:6: ( 'read' )
+            // Pascal.g:294:8: 'read'
+            {
+            match("read"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "READ"
+
     // $ANTLR start "TRUE"
     public final void mTRUE() throws RecognitionException {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:286:6: ( 'true' )
-            // Pascal.g:286:8: 'true'
+            // Pascal.g:295:6: ( 'true' )
+            // Pascal.g:295:8: 'true'
             {
             match("true"); 
 
@@ -746,8 +790,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:287:7: ( 'false' )
-            // Pascal.g:287:9: 'false'
+            // Pascal.g:296:7: ( 'false' )
+            // Pascal.g:296:9: 'false'
             {
             match("false"); 
 
@@ -767,8 +811,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:288:4: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-            // Pascal.g:288:6: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // Pascal.g:297:4: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+            // Pascal.g:297:6: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -779,7 +823,7 @@ public class PascalLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // Pascal.g:288:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // Pascal.g:297:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             loop1:
             do {
                 int alt1=2;
@@ -828,10 +872,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:289:8: ( ( '0' .. '9' )+ )
-            // Pascal.g:289:10: ( '0' .. '9' )+
+            // Pascal.g:298:8: ( ( '0' .. '9' )+ )
+            // Pascal.g:298:10: ( '0' .. '9' )+
             {
-            // Pascal.g:289:10: ( '0' .. '9' )+
+            // Pascal.g:298:10: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -845,7 +889,7 @@ public class PascalLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // Pascal.g:289:11: '0' .. '9'
+            	    // Pascal.g:298:11: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -877,10 +921,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:290:9: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // Pascal.g:290:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // Pascal.g:299:9: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // Pascal.g:299:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            // Pascal.g:290:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // Pascal.g:299:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
             int cnt3=0;
             loop3:
             do {
@@ -931,264 +975,278 @@ public class PascalLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // Pascal.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | WRITE | WRITELN | TRUE | FALSE | ID | NUMBER | WS )
-        int alt4=37;
+        // Pascal.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | WRITE | WRITELN | READ | TRUE | FALSE | ID | NUMBER | WS )
+        int alt4=39;
         alt4 = dfa4.predict(input);
         switch (alt4) {
             case 1 :
-                // Pascal.g:1:10: T__11
-                {
-                mT__11(); 
-
-                }
-                break;
-            case 2 :
-                // Pascal.g:1:16: T__12
+                // Pascal.g:1:10: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
-            case 3 :
-                // Pascal.g:1:22: T__13
+            case 2 :
+                // Pascal.g:1:16: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 4 :
-                // Pascal.g:1:28: T__14
+            case 3 :
+                // Pascal.g:1:22: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 5 :
-                // Pascal.g:1:34: T__15
+            case 4 :
+                // Pascal.g:1:28: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 6 :
-                // Pascal.g:1:40: T__16
+            case 5 :
+                // Pascal.g:1:34: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 7 :
-                // Pascal.g:1:46: T__17
+            case 6 :
+                // Pascal.g:1:40: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 8 :
-                // Pascal.g:1:52: T__18
+            case 7 :
+                // Pascal.g:1:46: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 9 :
-                // Pascal.g:1:58: T__19
+            case 8 :
+                // Pascal.g:1:52: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 10 :
-                // Pascal.g:1:64: T__20
+            case 9 :
+                // Pascal.g:1:58: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 11 :
-                // Pascal.g:1:70: T__21
+            case 10 :
+                // Pascal.g:1:64: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 12 :
-                // Pascal.g:1:76: T__22
+            case 11 :
+                // Pascal.g:1:70: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 13 :
-                // Pascal.g:1:82: T__23
+            case 12 :
+                // Pascal.g:1:76: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 14 :
-                // Pascal.g:1:88: T__24
+            case 13 :
+                // Pascal.g:1:82: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 15 :
-                // Pascal.g:1:94: T__25
+            case 14 :
+                // Pascal.g:1:88: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 16 :
-                // Pascal.g:1:100: T__26
+            case 15 :
+                // Pascal.g:1:94: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 17 :
-                // Pascal.g:1:106: T__27
+            case 16 :
+                // Pascal.g:1:100: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 18 :
-                // Pascal.g:1:112: T__28
+            case 17 :
+                // Pascal.g:1:106: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 19 :
-                // Pascal.g:1:118: T__29
+            case 18 :
+                // Pascal.g:1:112: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 20 :
-                // Pascal.g:1:124: T__30
+            case 19 :
+                // Pascal.g:1:118: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 21 :
-                // Pascal.g:1:130: T__31
+            case 20 :
+                // Pascal.g:1:124: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 22 :
-                // Pascal.g:1:136: T__32
+            case 21 :
+                // Pascal.g:1:130: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 23 :
-                // Pascal.g:1:142: T__33
+            case 22 :
+                // Pascal.g:1:136: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 24 :
-                // Pascal.g:1:148: T__34
+            case 23 :
+                // Pascal.g:1:142: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 25 :
-                // Pascal.g:1:154: T__35
+            case 24 :
+                // Pascal.g:1:148: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 26 :
-                // Pascal.g:1:160: T__36
+            case 25 :
+                // Pascal.g:1:154: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 27 :
-                // Pascal.g:1:166: T__37
+            case 26 :
+                // Pascal.g:1:160: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 28 :
-                // Pascal.g:1:172: T__38
+            case 27 :
+                // Pascal.g:1:166: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 29 :
-                // Pascal.g:1:178: T__39
+            case 28 :
+                // Pascal.g:1:172: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 30 :
-                // Pascal.g:1:184: T__40
+            case 29 :
+                // Pascal.g:1:178: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
+            case 30 :
+                // Pascal.g:1:184: T__41
+                {
+                mT__41(); 
+
+                }
+                break;
             case 31 :
-                // Pascal.g:1:190: WRITE
+                // Pascal.g:1:190: T__42
+                {
+                mT__42(); 
+
+                }
+                break;
+            case 32 :
+                // Pascal.g:1:196: WRITE
                 {
                 mWRITE(); 
 
                 }
                 break;
-            case 32 :
-                // Pascal.g:1:196: WRITELN
+            case 33 :
+                // Pascal.g:1:202: WRITELN
                 {
                 mWRITELN(); 
 
                 }
                 break;
-            case 33 :
-                // Pascal.g:1:204: TRUE
+            case 34 :
+                // Pascal.g:1:210: READ
+                {
+                mREAD(); 
+
+                }
+                break;
+            case 35 :
+                // Pascal.g:1:215: TRUE
                 {
                 mTRUE(); 
 
                 }
                 break;
-            case 34 :
-                // Pascal.g:1:209: FALSE
+            case 36 :
+                // Pascal.g:1:220: FALSE
                 {
                 mFALSE(); 
 
                 }
                 break;
-            case 35 :
-                // Pascal.g:1:215: ID
+            case 37 :
+                // Pascal.g:1:226: ID
                 {
                 mID(); 
 
                 }
                 break;
-            case 36 :
-                // Pascal.g:1:218: NUMBER
+            case 38 :
+                // Pascal.g:1:229: NUMBER
                 {
                 mNUMBER(); 
 
                 }
                 break;
-            case 37 :
-                // Pascal.g:1:225: WS
+            case 39 :
+                // Pascal.g:1:236: WS
                 {
                 mWS(); 
 
@@ -1202,152 +1260,159 @@ public class PascalLexer extends Lexer {
 
     protected DFA4 dfa4 = new DFA4(this);
     static final String DFA4_eotS =
-        "\1\uffff\1\30\1\uffff\3\30\2\uffff\6\30\1\52\1\55\1\uffff\1\30"+
-        "\1\60\1\30\3\uffff\1\30\3\uffff\7\30\1\72\1\30\1\74\2\30\1\77\1"+
-        "\30\5\uffff\1\30\2\uffff\3\30\1\105\1\30\1\111\3\30\1\uffff\1\115"+
-        "\1\uffff\2\30\1\uffff\1\120\4\30\1\uffff\1\30\3\uffff\1\126\2\30"+
-        "\1\uffff\1\131\1\132\2\uffff\3\30\1\136\1\uffff\1\137\1\141\2\uffff"+
-        "\1\30\1\143\1\30\2\uffff\1\30\1\uffff\1\30\1\uffff\1\30\1\150\1"+
-        "\151\3\uffff";
+        "\1\uffff\1\31\1\uffff\3\31\1\42\1\uffff\6\31\1\55\1\60\1\uffff"+
+        "\1\31\1\63\1\31\3\uffff\2\31\3\uffff\5\31\2\uffff\2\31\1\76\1\31"+
+        "\1\100\2\31\1\103\1\31\5\uffff\1\31\2\uffff\4\31\1\112\1\31\1\116"+
+        "\3\31\1\uffff\1\122\1\uffff\2\31\1\uffff\1\125\5\31\1\uffff\1\31"+
+        "\3\uffff\1\134\2\31\1\uffff\1\137\1\140\2\uffff\1\31\1\142\2\31"+
+        "\1\145\1\uffff\1\146\1\150\2\uffff\1\31\1\uffff\1\152\1\31\2\uffff"+
+        "\1\31\1\uffff\1\31\1\uffff\1\31\1\157\1\160\3\uffff";
     static final String DFA4_eofS =
-        "\152\uffff";
+        "\161\uffff";
     static final String DFA4_minS =
-        "\1\11\1\162\1\uffff\1\141\1\145\1\154\2\uffff\1\150\1\151\1\146"+
-        "\1\150\1\162\1\156\2\75\1\uffff\1\157\1\75\1\156\3\uffff\1\141\3"+
-        "\uffff\1\157\1\162\1\147\1\144\1\163\2\151\1\60\1\166\1\60\1\145"+
-        "\1\165\1\60\1\144\5\uffff\1\164\2\uffff\1\164\1\154\1\147\1\60\1"+
-        "\151\1\56\1\145\1\154\1\164\1\uffff\1\60\1\uffff\1\156\1\145\1\uffff"+
-        "\1\60\1\40\1\145\1\163\1\162\1\uffff\1\156\3\uffff\1\60\2\145\1"+
-        "\uffff\2\60\2\uffff\1\147\1\145\1\141\1\60\1\uffff\2\60\2\uffff"+
-        "\1\145\1\60\1\155\2\uffff\1\156\1\uffff\1\162\1\uffff\1\40\2\60"+
-        "\3\uffff";
+        "\1\11\1\162\1\uffff\1\141\1\145\1\154\1\51\1\uffff\1\150\1\151"+
+        "\1\146\1\150\1\162\1\156\2\75\1\uffff\1\157\1\75\1\156\3\uffff\1"+
+        "\145\1\141\3\uffff\1\157\1\162\1\147\1\144\1\163\2\uffff\2\151\1"+
+        "\60\1\166\1\60\1\145\1\165\1\60\1\144\5\uffff\1\164\2\uffff\1\164"+
+        "\1\141\1\154\1\147\1\60\1\151\1\56\1\145\1\154\1\164\1\uffff\1\60"+
+        "\1\uffff\1\156\1\145\1\uffff\1\60\1\40\1\145\1\144\1\163\1\162\1"+
+        "\uffff\1\156\3\uffff\1\60\2\145\1\uffff\2\60\2\uffff\1\147\1\60"+
+        "\1\145\1\141\1\60\1\uffff\2\60\2\uffff\1\145\1\uffff\1\60\1\155"+
+        "\2\uffff\1\156\1\uffff\1\162\1\uffff\1\40\2\60\3\uffff";
     static final String DFA4_maxS =
-        "\1\172\1\162\1\uffff\1\141\1\145\1\156\2\uffff\1\162\1\157\1\146"+
-        "\2\162\1\156\1\75\1\76\1\uffff\1\157\1\75\1\156\3\uffff\1\141\3"+
-        "\uffff\1\157\1\162\1\147\1\144\1\163\2\151\1\172\1\166\1\172\1\145"+
-        "\1\165\1\172\1\144\5\uffff\1\164\2\uffff\1\164\1\154\1\147\1\172"+
-        "\1\151\1\172\1\145\1\154\1\164\1\uffff\1\172\1\uffff\1\156\1\145"+
-        "\1\uffff\1\172\1\40\1\145\1\163\1\162\1\uffff\1\156\3\uffff\1\172"+
-        "\2\145\1\uffff\2\172\2\uffff\1\147\1\145\1\141\1\172\1\uffff\2\172"+
-        "\2\uffff\1\145\1\172\1\155\2\uffff\1\156\1\uffff\1\162\1\uffff\1"+
-        "\40\2\172\3\uffff";
+        "\1\172\1\162\1\uffff\1\141\1\145\1\156\1\51\1\uffff\1\162\1\157"+
+        "\1\146\2\162\1\156\1\75\1\76\1\uffff\1\157\1\75\1\156\3\uffff\1"+
+        "\145\1\141\3\uffff\1\157\1\162\1\147\1\144\1\163\2\uffff\2\151\1"+
+        "\172\1\166\1\172\1\145\1\165\1\172\1\144\5\uffff\1\164\2\uffff\1"+
+        "\164\1\141\1\154\1\147\1\172\1\151\1\172\1\145\1\154\1\164\1\uffff"+
+        "\1\172\1\uffff\1\156\1\145\1\uffff\1\172\1\40\1\145\1\144\1\163"+
+        "\1\162\1\uffff\1\156\3\uffff\1\172\2\145\1\uffff\2\172\2\uffff\1"+
+        "\147\1\172\1\145\1\141\1\172\1\uffff\2\172\2\uffff\1\145\1\uffff"+
+        "\1\172\1\155\2\uffff\1\156\1\uffff\1\162\1\uffff\1\40\2\172\3\uffff";
     static final String DFA4_acceptS =
-        "\2\uffff\1\2\3\uffff\1\6\1\7\10\uffff\1\23\3\uffff\1\33\1\34\1"+
-        "\35\1\uffff\1\43\1\44\1\45\16\uffff\1\24\1\21\1\25\1\26\1\22\1\uffff"+
-        "\1\32\1\30\11\uffff\1\11\1\uffff\1\13\2\uffff\1\17\5\uffff\1\3\1"+
-        "\uffff\1\5\1\12\1\15\3\uffff\1\36\2\uffff\1\20\1\27\4\uffff\1\16"+
-        "\2\uffff\1\14\1\41\3\uffff\1\4\1\10\1\uffff\1\37\1\uffff\1\42\3"+
-        "\uffff\1\1\1\40\1\31";
+        "\2\uffff\1\2\4\uffff\1\7\10\uffff\1\23\3\uffff\1\33\1\34\1\35\2"+
+        "\uffff\1\45\1\46\1\47\5\uffff\1\37\1\6\11\uffff\1\24\1\21\1\25\1"+
+        "\26\1\22\1\uffff\1\32\1\30\12\uffff\1\11\1\uffff\1\13\2\uffff\1"+
+        "\17\6\uffff\1\3\1\uffff\1\5\1\12\1\15\3\uffff\1\36\2\uffff\1\20"+
+        "\1\27\5\uffff\1\16\2\uffff\1\14\1\43\1\uffff\1\42\2\uffff\1\4\1"+
+        "\10\1\uffff\1\40\1\uffff\1\44\3\uffff\1\1\1\41\1\31";
     static final String DFA4_specialS =
-        "\152\uffff}>";
+        "\161\uffff}>";
     static final String[] DFA4_transitionS = {
-            "\2\32\2\uffff\1\32\22\uffff\1\32\7\uffff\1\6\1\7\1\26\1\24"+
-            "\1\uffff\1\25\2\uffff\12\31\1\22\1\2\1\17\1\20\1\16\2\uffff"+
-            "\10\30\1\23\21\30\6\uffff\1\15\1\4\1\30\1\11\1\5\1\27\2\30\1"+
-            "\12\4\30\1\21\1\14\1\1\3\30\1\13\1\30\1\3\1\10\3\30",
-            "\1\33",
-            "",
+            "\2\33\2\uffff\1\33\22\uffff\1\33\7\uffff\1\6\1\7\1\26\1\24"+
+            "\1\uffff\1\25\2\uffff\12\32\1\22\1\2\1\17\1\20\1\16\2\uffff"+
+            "\10\31\1\23\21\31\6\uffff\1\15\1\4\1\31\1\11\1\5\1\30\2\31\1"+
+            "\12\4\31\1\21\1\14\1\1\1\31\1\27\1\31\1\13\1\31\1\3\1\10\3\31",
             "\1\34",
+            "",
             "\1\35",
-            "\1\37\1\uffff\1\36",
+            "\1\36",
+            "\1\40\1\uffff\1\37",
+            "\1\41",
             "",
-            "",
-            "\1\40\11\uffff\1\41",
-            "\1\43\5\uffff\1\42",
-            "\1\44",
-            "\1\45\11\uffff\1\46",
+            "\1\43\11\uffff\1\44",
+            "\1\46\5\uffff\1\45",
             "\1\47",
-            "\1\50",
-            "\1\51",
-            "\1\53\1\54",
+            "\1\50\11\uffff\1\51",
+            "\1\52",
+            "\1\53",
+            "\1\54",
+            "\1\56\1\57",
             "",
-            "\1\56",
-            "\1\57",
             "\1\61",
-            "",
-            "",
-            "",
             "\1\62",
-            "",
-            "",
-            "",
-            "\1\63",
             "\1\64",
+            "",
+            "",
+            "",
             "\1\65",
             "\1\66",
+            "",
+            "",
+            "",
             "\1\67",
             "\1\70",
             "\1\71",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\72",
             "\1\73",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "",
+            "\1\74",
             "\1\75",
-            "\1\76",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\100",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\77",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\101",
-            "",
-            "",
             "\1\102",
-            "\1\103",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\104",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\105",
+            "",
+            "",
             "\1\106",
-            "\1\107\1\uffff\12\30\1\uffff\1\110\5\uffff\32\30\4\uffff\1"+
-            "\30\1\uffff\32\30",
-            "\1\112",
+            "\1\107",
+            "\1\110",
+            "\1\111",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\113",
-            "\1\114",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
-            "\1\116",
+            "\1\114\1\uffff\12\31\1\uffff\1\115\5\uffff\32\31\4\uffff\1"+
+            "\31\1\uffff\32\31",
             "\1\117",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\120",
             "\1\121",
-            "\1\122",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
             "\1\123",
             "\1\124",
             "",
-            "\1\125",
-            "",
-            "",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\126",
             "\1\127",
             "\1\130",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "",
+            "\1\131",
+            "\1\132",
             "",
             "\1\133",
-            "\1\134",
+            "",
+            "",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\1\135",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\136",
             "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\13\30\1\140\16\30",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
-            "\1\142",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\141",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\143",
             "\1\144",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\13\31\1\147\16\31",
             "",
             "",
-            "\1\145",
+            "\1\151",
             "",
-            "\1\146",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\153",
             "",
-            "\1\147",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "\1\154",
+            "",
+            "\1\155",
+            "",
+            "\1\156",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             ""
@@ -1383,7 +1448,7 @@ public class PascalLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | WRITE | WRITELN | TRUE | FALSE | ID | NUMBER | WS );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | WRITE | WRITELN | READ | TRUE | FALSE | ID | NUMBER | WS );";
         }
     }
  

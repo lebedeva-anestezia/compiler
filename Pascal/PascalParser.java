@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 00:17:18
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 16:19:16
 
 
 import java.util.Collections;
@@ -19,10 +19,9 @@ import java.util.ArrayList;
 
 public class PascalParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ID", "WRITE", "WRITELN", "TRUE", "FALSE", "NUMBER", "WS", "'program '", "';'", "'var'", "'begin'", "'end.'", "'('", "')'", "'while'", "'do'", "'end;'", "'if'", "'then'", "'end'", "'else'", "'or'", "'and'", "'>'", "'<'", "'='", "'>='", "'<='", "'<>'", "'not ('", "':'", "'Integer'", "':='", "'+'", "'-'", "'*'", "'div'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ID", "WRITE", "WRITELN", "TRUE", "FALSE", "NUMBER", "READ", "WS", "'program '", "';'", "'var'", "'begin'", "'end.'", "'('", "')'", "'while'", "'do'", "'end;'", "'if'", "'then'", "'end'", "'else'", "'or'", "'and'", "'>'", "'<'", "'='", "'>='", "'<='", "'<>'", "'not ('", "':'", "'Integer'", "':='", "'+'", "'-'", "'*'", "'div'", "'()'"
     };
     public static final int EOF=-1;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -52,13 +51,16 @@ public class PascalParser extends Parser {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
     public static final int ID=4;
     public static final int WRITE=5;
     public static final int WRITELN=6;
     public static final int TRUE=7;
     public static final int FALSE=8;
     public static final int NUMBER=9;
-    public static final int WS=10;
+    public static final int READ=10;
+    public static final int WS=11;
 
     // delegates
     // delegators
@@ -108,21 +110,21 @@ public class PascalParser extends Parser {
             // Pascal.g:37:2: ( 'program ' ID ';' ( 'var' ( variableDeclaration )* )? 'begin' ( statement )* 'end.' )
             // Pascal.g:37:4: 'program ' ID ';' ( 'var' ( variableDeclaration )* )? 'begin' ( statement )* 'end.'
             {
-            match(input,11,FOLLOW_11_in_program27); 
+            match(input,12,FOLLOW_12_in_program27); 
             ID1=(Token)match(input,ID,FOLLOW_ID_in_program29); 
-            match(input,12,FOLLOW_12_in_program31); 
+            match(input,13,FOLLOW_13_in_program31); 
             // Pascal.g:38:2: ( 'var' ( variableDeclaration )* )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==13) ) {
+            if ( (LA2_0==14) ) {
                 alt2=1;
             }
             switch (alt2) {
                 case 1 :
                     // Pascal.g:38:3: 'var' ( variableDeclaration )*
                     {
-                    match(input,13,FOLLOW_13_in_program35); 
+                    match(input,14,FOLLOW_14_in_program35); 
                     // Pascal.g:38:9: ( variableDeclaration )*
                     loop1:
                     do {
@@ -158,7 +160,7 @@ public class PascalParser extends Parser {
 
             }
 
-            match(input,14,FOLLOW_14_in_program45); 
+            match(input,15,FOLLOW_15_in_program45); 
             // Pascal.g:40:2: ( statement )*
             loop3:
             do {
@@ -171,7 +173,7 @@ public class PascalParser extends Parser {
                 else if ( (LA3_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                     alt3=1;
                 }
-                else if ( (LA3_0==18||LA3_0==21) ) {
+                else if ( (LA3_0==19||LA3_0==22) ) {
                     alt3=1;
                 }
 
@@ -194,7 +196,7 @@ public class PascalParser extends Parser {
                 }
             } while (true);
 
-            match(input,15,FOLLOW_15_in_program54); 
+            match(input,16,FOLLOW_16_in_program54); 
                
             	  pre += ".class " + (ID1!=null?ID1.getText():null) + "\n";
                       pre += ".super java/lang/Object\n";
@@ -251,10 +253,10 @@ public class PascalParser extends Parser {
             else if ( (LA4_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                 alt4=2;
             }
-            else if ( (LA4_0==21) ) {
+            else if ( (LA4_0==22) ) {
                 alt4=3;
             }
-            else if ( (LA4_0==18) ) {
+            else if ( (LA4_0==19) ) {
                 alt4=4;
             }
             else {
@@ -272,7 +274,7 @@ public class PascalParser extends Parser {
 
                     state._fsp--;
 
-                    match(input,12,FOLLOW_12_in_statement68); 
+                    match(input,13,FOLLOW_13_in_statement68); 
 
                     }
                     break;
@@ -284,7 +286,7 @@ public class PascalParser extends Parser {
 
                     state._fsp--;
 
-                    match(input,12,FOLLOW_12_in_statement74); 
+                    match(input,13,FOLLOW_13_in_statement74); 
 
                     }
                     break;
@@ -349,13 +351,13 @@ public class PascalParser extends Parser {
                     // Pascal.g:79:4: WRITE '(' intExpression ')'
                     {
                     match(input,WRITE,FOLLOW_WRITE_in_writeOperation94); 
-                    match(input,16,FOLLOW_16_in_writeOperation96); 
+                    match(input,17,FOLLOW_17_in_writeOperation96); 
                     pushFollow(FOLLOW_intExpression_in_writeOperation97);
                     intExpression();
 
                     state._fsp--;
 
-                    match(input,17,FOLLOW_17_in_writeOperation99); 
+                    match(input,18,FOLLOW_18_in_writeOperation99); 
                     	code += "invokestatic java/lang/String/valueOf(I)Ljava/lang/String;\n"; 
                     		code += "getstatic java/lang/System/out Ljava/io/PrintStream;\n";
                     		code += "swap\n";
@@ -370,13 +372,13 @@ public class PascalParser extends Parser {
                     // Pascal.g:87:4: WRITELN '(' intExpression ')'
                     {
                     match(input,WRITELN,FOLLOW_WRITELN_in_writeOperation107); 
-                    match(input,16,FOLLOW_16_in_writeOperation109); 
+                    match(input,17,FOLLOW_17_in_writeOperation109); 
                     pushFollow(FOLLOW_intExpression_in_writeOperation110);
                     intExpression();
 
                     state._fsp--;
 
-                    match(input,17,FOLLOW_17_in_writeOperation112); 
+                    match(input,18,FOLLOW_18_in_writeOperation112); 
                     	code += "invokestatic java/lang/String/valueOf(I)Ljava/lang/String;\n"; 
                     		code += "getstatic java/lang/System/out Ljava/io/PrintStream;\n";
                     		code += "swap\n";
@@ -402,7 +404,7 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "whileOperation"
-    // Pascal.g:97:1: whileOperation : 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;' ;
+    // Pascal.g:98:1: whileOperation : 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;' ;
     public final void whileOperation() throws RecognitionException {
 
         	int goTrue = ++labelCount;
@@ -410,25 +412,25 @@ public class PascalParser extends Parser {
         	int localLabel = 0;
 
         try {
-            // Pascal.g:103:2: ( 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;' )
-            // Pascal.g:103:4: 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;'
+            // Pascal.g:104:2: ( 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;' )
+            // Pascal.g:104:4: 'while' logicExpression[goTrue, goFalse] 'do' 'begin' ( statement )* 'end;'
             {
-            match(input,18,FOLLOW_18_in_whileOperation130); 
+            match(input,19,FOLLOW_19_in_whileOperation131); 
                                    
             		localLabel = ++labelCount; 
             		code += "label" + localLabel + ":\n";
             	
-            pushFollow(FOLLOW_logicExpression_in_whileOperation135);
+            pushFollow(FOLLOW_logicExpression_in_whileOperation136);
             logicExpression(goTrue, goFalse);
 
             state._fsp--;
 
-            match(input,19,FOLLOW_19_in_whileOperation139); 
-            match(input,14,FOLLOW_14_in_whileOperation141); 
+            match(input,20,FOLLOW_20_in_whileOperation140); 
+            match(input,15,FOLLOW_15_in_whileOperation142); 
 
             		code += "label" + goTrue + ":\n";
             	
-            // Pascal.g:111:2: ( statement )*
+            // Pascal.g:112:2: ( statement )*
             loop6:
             do {
                 int alt6=2;
@@ -440,16 +442,16 @@ public class PascalParser extends Parser {
                 else if ( (LA6_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                     alt6=1;
                 }
-                else if ( (LA6_0==18||LA6_0==21) ) {
+                else if ( (LA6_0==19||LA6_0==22) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // Pascal.g:111:3: statement
+            	    // Pascal.g:112:3: statement
             	    {
-            	    pushFollow(FOLLOW_statement_in_whileOperation147);
+            	    pushFollow(FOLLOW_statement_in_whileOperation148);
             	    statement();
 
             	    state._fsp--;
@@ -466,7 +468,7 @@ public class PascalParser extends Parser {
 
             		code += "goto label" +  localLabel + "\n";
             	
-            match(input,20,FOLLOW_20_in_whileOperation154); 
+            match(input,21,FOLLOW_21_in_whileOperation155); 
 
             		code += "label" + goFalse + ":\n";
             	
@@ -486,31 +488,31 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "ifOperation"
-    // Pascal.g:119:1: ifOperation : 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) ) ;
+    // Pascal.g:120:1: ifOperation : 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) ) ;
     public final void ifOperation() throws RecognitionException {
 
         	int localLabel = ++labelCount;
 
         try {
-            // Pascal.g:123:2: ( 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) ) )
-            // Pascal.g:123:4: 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) )
+            // Pascal.g:124:2: ( 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) ) )
+            // Pascal.g:124:4: 'if' logicExpression[localLabel + 1, localLabel] 'then' 'begin' ( statement )* ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) )
             {
-            match(input,21,FOLLOW_21_in_ifOperation171); 
+            match(input,22,FOLLOW_22_in_ifOperation172); 
                                                      
             		labelCount += 2;                              
             	
-            pushFollow(FOLLOW_logicExpression_in_ifOperation175);
+            pushFollow(FOLLOW_logicExpression_in_ifOperation176);
             logicExpression(localLabel + 1, localLabel);
 
             state._fsp--;
 
-            match(input,22,FOLLOW_22_in_ifOperation178); 
-            match(input,14,FOLLOW_14_in_ifOperation180); 
+            match(input,23,FOLLOW_23_in_ifOperation179); 
+            match(input,15,FOLLOW_15_in_ifOperation181); 
              
             		code += "goto label" + localLabel + "\n"; 
             		code += "label" + (localLabel + 1) + ":\n";
             	
-            // Pascal.g:129:2: ( statement )*
+            // Pascal.g:130:2: ( statement )*
             loop7:
             do {
                 int alt7=2;
@@ -522,16 +524,16 @@ public class PascalParser extends Parser {
                 else if ( (LA7_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                     alt7=1;
                 }
-                else if ( (LA7_0==18||LA7_0==21) ) {
+                else if ( (LA7_0==19||LA7_0==22) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // Pascal.g:129:3: statement
+            	    // Pascal.g:130:3: statement
             	    {
-            	    pushFollow(FOLLOW_statement_in_ifOperation186);
+            	    pushFollow(FOLLOW_statement_in_ifOperation187);
             	    statement();
 
             	    state._fsp--;
@@ -545,21 +547,21 @@ public class PascalParser extends Parser {
                 }
             } while (true);
 
-            // Pascal.g:129:15: ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) )
-            // Pascal.g:130:3: ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' )
+            // Pascal.g:130:15: ( ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' ) )
+            // Pascal.g:131:3: ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' )
             {
 
             			code += "goto label" + (localLabel + 2) + "\n";
             			code += "label" + localLabel + ":\n";
             		
-            // Pascal.g:133:4: ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' )
+            // Pascal.g:134:4: ( 'end;' | 'end' 'else' 'begin' ( statement )* 'end;' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==20) ) {
+            if ( (LA9_0==21) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==23) ) {
+            else if ( (LA9_0==24) ) {
                 alt9=2;
             }
             else {
@@ -570,19 +572,19 @@ public class PascalParser extends Parser {
             }
             switch (alt9) {
                 case 1 :
-                    // Pascal.g:134:3: 'end;'
+                    // Pascal.g:135:3: 'end;'
                     {
-                    match(input,20,FOLLOW_20_in_ifOperation199); 
+                    match(input,21,FOLLOW_21_in_ifOperation200); 
 
                     }
                     break;
                 case 2 :
-                    // Pascal.g:135:5: 'end' 'else' 'begin' ( statement )* 'end;'
+                    // Pascal.g:136:5: 'end' 'else' 'begin' ( statement )* 'end;'
                     {
-                    match(input,23,FOLLOW_23_in_ifOperation206); 
-                    match(input,24,FOLLOW_24_in_ifOperation208); 
-                    match(input,14,FOLLOW_14_in_ifOperation210); 
-                    // Pascal.g:136:3: ( statement )*
+                    match(input,24,FOLLOW_24_in_ifOperation207); 
+                    match(input,25,FOLLOW_25_in_ifOperation209); 
+                    match(input,15,FOLLOW_15_in_ifOperation211); 
+                    // Pascal.g:137:3: ( statement )*
                     loop8:
                     do {
                         int alt8=2;
@@ -594,16 +596,16 @@ public class PascalParser extends Parser {
                         else if ( (LA8_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                             alt8=1;
                         }
-                        else if ( (LA8_0==18||LA8_0==21) ) {
+                        else if ( (LA8_0==19||LA8_0==22) ) {
                             alt8=1;
                         }
 
 
                         switch (alt8) {
                     	case 1 :
-                    	    // Pascal.g:136:4: statement
+                    	    // Pascal.g:137:4: statement
                     	    {
-                    	    pushFollow(FOLLOW_statement_in_ifOperation216);
+                    	    pushFollow(FOLLOW_statement_in_ifOperation217);
                     	    statement();
 
                     	    state._fsp--;
@@ -617,7 +619,7 @@ public class PascalParser extends Parser {
                         }
                     } while (true);
 
-                    match(input,20,FOLLOW_20_in_ifOperation220); 
+                    match(input,21,FOLLOW_21_in_ifOperation221); 
 
                     }
                     break;
@@ -646,13 +648,13 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "logicExpression"
-    // Pascal.g:142:1: logicExpression[int isTrue, int isFalse] : logicOrExpression[isTrue, isFalse] ;
+    // Pascal.g:143:1: logicExpression[int isTrue, int isFalse] : logicOrExpression[isTrue, isFalse] ;
     public final void logicExpression(int isTrue, int isFalse) throws RecognitionException {
         try {
-            // Pascal.g:143:2: ( logicOrExpression[isTrue, isFalse] )
-            // Pascal.g:143:4: logicOrExpression[isTrue, isFalse]
+            // Pascal.g:144:2: ( logicOrExpression[isTrue, isFalse] )
+            // Pascal.g:144:4: logicOrExpression[isTrue, isFalse]
             {
-            pushFollow(FOLLOW_logicOrExpression_in_logicExpression239);
+            pushFollow(FOLLOW_logicOrExpression_in_logicExpression240);
             logicOrExpression(isTrue, isFalse);
 
             state._fsp--;
@@ -673,42 +675,42 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "logicOrExpression"
-    // Pascal.g:146:1: logicOrExpression[int isTrue, int isFalse] : logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )* ;
+    // Pascal.g:147:1: logicOrExpression[int isTrue, int isFalse] : logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )* ;
     public final void logicOrExpression(int isTrue, int isFalse) throws RecognitionException {
 
         	int goTrue = ++labelCount;
         	int localLabel = ++labelCount;
 
         try {
-            // Pascal.g:151:2: ( logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )* )
-            // Pascal.g:151:4: logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )*
+            // Pascal.g:152:2: ( logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )* )
+            // Pascal.g:152:4: logicAndExpression[goTrue, localLabel] ( 'or' logicAndExpression[goTrue, localLabel] )*
             {
-            pushFollow(FOLLOW_logicAndExpression_in_logicOrExpression256);
+            pushFollow(FOLLOW_logicAndExpression_in_logicOrExpression257);
             logicAndExpression(goTrue, localLabel);
 
             state._fsp--;
 
-            // Pascal.g:152:8: ( 'or' logicAndExpression[goTrue, localLabel] )*
+            // Pascal.g:153:8: ( 'or' logicAndExpression[goTrue, localLabel] )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==25) ) {
+                if ( (LA10_0==26) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // Pascal.g:152:9: 'or' logicAndExpression[goTrue, localLabel]
+            	    // Pascal.g:153:9: 'or' logicAndExpression[goTrue, localLabel]
             	    {
-            	    match(input,25,FOLLOW_25_in_logicOrExpression268); 
+            	    match(input,26,FOLLOW_26_in_logicOrExpression269); 
             	     
             	    			code += "label" + localLabel + ":\n";
             	    			localLabel = ++labelCount;   
             	    		
-            	    pushFollow(FOLLOW_logicAndExpression_in_logicOrExpression274);
+            	    pushFollow(FOLLOW_logicAndExpression_in_logicOrExpression275);
             	    logicAndExpression(goTrue, localLabel);
 
             	    state._fsp--;
@@ -744,42 +746,42 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "logicAndExpression"
-    // Pascal.g:164:1: logicAndExpression[int isTrue, int isFalse] : logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )* ;
+    // Pascal.g:165:1: logicAndExpression[int isTrue, int isFalse] : logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )* ;
     public final void logicAndExpression(int isTrue, int isFalse) throws RecognitionException {
 
         	int goFalse = ++labelCount;
         	int localLabel = ++labelCount;
 
         try {
-            // Pascal.g:169:5: ( logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )* )
-            // Pascal.g:169:7: logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )*
+            // Pascal.g:170:5: ( logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )* )
+            // Pascal.g:170:7: logicCompareExpression[localLabel, goFalse] ( 'and' logicCompareExpression[localLabel, goFalse] )*
             {
-            pushFollow(FOLLOW_logicCompareExpression_in_logicAndExpression301);
+            pushFollow(FOLLOW_logicCompareExpression_in_logicAndExpression302);
             logicCompareExpression(localLabel, goFalse);
 
             state._fsp--;
 
-            // Pascal.g:170:8: ( 'and' logicCompareExpression[localLabel, goFalse] )*
+            // Pascal.g:171:8: ( 'and' logicCompareExpression[localLabel, goFalse] )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==26) ) {
+                if ( (LA11_0==27) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // Pascal.g:170:9: 'and' logicCompareExpression[localLabel, goFalse]
+            	    // Pascal.g:171:9: 'and' logicCompareExpression[localLabel, goFalse]
             	    {
-            	    match(input,26,FOLLOW_26_in_logicAndExpression313); 
+            	    match(input,27,FOLLOW_27_in_logicAndExpression314); 
 
             	    		code += "label" + localLabel + ":\n";
             	    		localLabel = ++labelCount;        
             	            
-            	    pushFollow(FOLLOW_logicCompareExpression_in_logicAndExpression318);
+            	    pushFollow(FOLLOW_logicCompareExpression_in_logicAndExpression319);
             	    logicCompareExpression(localLabel, goFalse);
 
             	    state._fsp--;
@@ -815,10 +817,10 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "logicCompareExpression"
-    // Pascal.g:182:1: logicCompareExpression[int isTrue, int isFalse] : ( intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression ) | 'not (' logicExpression[isFalse, isTrue] ')' | TRUE | FALSE );
+    // Pascal.g:183:1: logicCompareExpression[int isTrue, int isFalse] : ( intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression ) | 'not (' logicExpression[isFalse, isTrue] ')' | TRUE | FALSE );
     public final void logicCompareExpression(int isTrue, int isFalse) throws RecognitionException {
         try {
-            // Pascal.g:183:2: ( intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression ) | 'not (' logicExpression[isFalse, isTrue] ')' | TRUE | FALSE )
+            // Pascal.g:184:2: ( intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression ) | 'not (' logicExpression[isFalse, isTrue] ')' | TRUE | FALSE )
             int alt13=4;
             int LA13_0 = input.LA(1);
 
@@ -828,10 +830,10 @@ public class PascalParser extends Parser {
             else if ( (LA13_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                 alt13=1;
             }
-            else if ( (LA13_0==16) ) {
+            else if ( (LA13_0==READ||LA13_0==17) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==33) ) {
+            else if ( (LA13_0==34) ) {
                 alt13=2;
             }
             else if ( (LA13_0==TRUE) ) {
@@ -848,42 +850,42 @@ public class PascalParser extends Parser {
             }
             switch (alt13) {
                 case 1 :
-                    // Pascal.g:183:4: intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression )
+                    // Pascal.g:184:4: intExpression ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression )
                     {
-                    pushFollow(FOLLOW_intExpression_in_logicCompareExpression335);
+                    pushFollow(FOLLOW_intExpression_in_logicCompareExpression336);
                     intExpression();
 
                     state._fsp--;
 
-                    // Pascal.g:183:18: ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression )
+                    // Pascal.g:184:18: ( '>' intExpression | '<' intExpression | '=' intExpression | '>=' intExpression | '<=' intExpression | '<>' intExpression )
                     int alt12=6;
                     switch ( input.LA(1) ) {
-                    case 27:
+                    case 28:
                         {
                         alt12=1;
                         }
                         break;
-                    case 28:
+                    case 29:
                         {
                         alt12=2;
                         }
                         break;
-                    case 29:
+                    case 30:
                         {
                         alt12=3;
                         }
                         break;
-                    case 30:
+                    case 31:
                         {
                         alt12=4;
                         }
                         break;
-                    case 31:
+                    case 32:
                         {
                         alt12=5;
                         }
                         break;
-                    case 32:
+                    case 33:
                         {
                         alt12=6;
                         }
@@ -897,10 +899,10 @@ public class PascalParser extends Parser {
 
                     switch (alt12) {
                         case 1 :
-                            // Pascal.g:184:2: '>' intExpression
+                            // Pascal.g:185:2: '>' intExpression
                             {
-                            match(input,27,FOLLOW_27_in_logicCompareExpression341); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression343);
+                            match(input,28,FOLLOW_28_in_logicCompareExpression342); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression344);
                             intExpression();
 
                             state._fsp--;
@@ -913,10 +915,10 @@ public class PascalParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // Pascal.g:188:3: '<' intExpression
+                            // Pascal.g:189:3: '<' intExpression
                             {
-                            match(input,28,FOLLOW_28_in_logicCompareExpression350); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression352);
+                            match(input,29,FOLLOW_29_in_logicCompareExpression351); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression353);
                             intExpression();
 
                             state._fsp--;
@@ -929,10 +931,10 @@ public class PascalParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // Pascal.g:192:3: '=' intExpression
+                            // Pascal.g:193:3: '=' intExpression
                             {
-                            match(input,29,FOLLOW_29_in_logicCompareExpression358); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression360);
+                            match(input,30,FOLLOW_30_in_logicCompareExpression359); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression361);
                             intExpression();
 
                             state._fsp--;
@@ -945,10 +947,10 @@ public class PascalParser extends Parser {
                             }
                             break;
                         case 4 :
-                            // Pascal.g:196:3: '>=' intExpression
+                            // Pascal.g:197:3: '>=' intExpression
                             {
-                            match(input,30,FOLLOW_30_in_logicCompareExpression366); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression368);
+                            match(input,31,FOLLOW_31_in_logicCompareExpression367); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression369);
                             intExpression();
 
                             state._fsp--;
@@ -961,10 +963,10 @@ public class PascalParser extends Parser {
                             }
                             break;
                         case 5 :
-                            // Pascal.g:200:3: '<=' intExpression
+                            // Pascal.g:201:3: '<=' intExpression
                             {
-                            match(input,31,FOLLOW_31_in_logicCompareExpression374); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression376);
+                            match(input,32,FOLLOW_32_in_logicCompareExpression375); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression377);
                             intExpression();
 
                             state._fsp--;
@@ -977,10 +979,10 @@ public class PascalParser extends Parser {
                             }
                             break;
                         case 6 :
-                            // Pascal.g:204:3: '<>' intExpression
+                            // Pascal.g:205:3: '<>' intExpression
                             {
-                            match(input,32,FOLLOW_32_in_logicCompareExpression382); 
-                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression384);
+                            match(input,33,FOLLOW_33_in_logicCompareExpression383); 
+                            pushFollow(FOLLOW_intExpression_in_logicCompareExpression385);
                             intExpression();
 
                             state._fsp--;
@@ -1003,22 +1005,22 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // Pascal.g:212:4: 'not (' logicExpression[isFalse, isTrue] ')'
+                    // Pascal.g:213:4: 'not (' logicExpression[isFalse, isTrue] ')'
                     {
-                    match(input,33,FOLLOW_33_in_logicCompareExpression395); 
-                    pushFollow(FOLLOW_logicExpression_in_logicCompareExpression396);
+                    match(input,34,FOLLOW_34_in_logicCompareExpression396); 
+                    pushFollow(FOLLOW_logicExpression_in_logicCompareExpression397);
                     logicExpression(isFalse, isTrue);
 
                     state._fsp--;
 
-                    match(input,17,FOLLOW_17_in_logicCompareExpression399); 
+                    match(input,18,FOLLOW_18_in_logicCompareExpression400); 
 
                     }
                     break;
                 case 3 :
-                    // Pascal.g:213:4: TRUE
+                    // Pascal.g:214:4: TRUE
                     {
-                    match(input,TRUE,FOLLOW_TRUE_in_logicCompareExpression408); 
+                    match(input,TRUE,FOLLOW_TRUE_in_logicCompareExpression409); 
 
                     		code += "goto label" + isTrue + "\n";
                     	
@@ -1026,9 +1028,9 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // Pascal.g:216:4: FALSE
+                    // Pascal.g:217:4: FALSE
                     {
-                    match(input,FALSE,FOLLOW_FALSE_in_logicCompareExpression415); 
+                    match(input,FALSE,FOLLOW_FALSE_in_logicCompareExpression416); 
 
                     		code += "goto label" + isFalse + "\n";
                     	
@@ -1050,21 +1052,21 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "variableDeclaration"
-    // Pascal.g:222:1: variableDeclaration : ID ':' 'Integer' ';' ;
+    // Pascal.g:223:1: variableDeclaration : ID ':' 'Integer' ';' ;
     public final void variableDeclaration() throws RecognitionException {
         Token ID2=null;
 
         try {
-            // Pascal.g:223:2: ( ID ':' 'Integer' ';' )
-            // Pascal.g:223:4: ID ':' 'Integer' ';'
+            // Pascal.g:224:2: ( ID ':' 'Integer' ';' )
+            // Pascal.g:224:4: ID ':' 'Integer' ';'
             {
-            ID2=(Token)match(input,ID,FOLLOW_ID_in_variableDeclaration428); 
-            match(input,34,FOLLOW_34_in_variableDeclaration430); 
-            match(input,35,FOLLOW_35_in_variableDeclaration432); 
+            ID2=(Token)match(input,ID,FOLLOW_ID_in_variableDeclaration429); 
+            match(input,35,FOLLOW_35_in_variableDeclaration431); 
+            match(input,36,FOLLOW_36_in_variableDeclaration433); 
 
                         intVars.put((ID2!=null?ID2.getText():null), ++localVariables);
                     
-            match(input,12,FOLLOW_12_in_variableDeclaration451); 
+            match(input,13,FOLLOW_13_in_variableDeclaration452); 
 
             }
 
@@ -1081,20 +1083,20 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "variableAssignment"
-    // Pascal.g:230:1: variableAssignment : {...}? => ID ':=' intExpression ;
+    // Pascal.g:231:1: variableAssignment : {...}? => ID ':=' intExpression ;
     public final void variableAssignment() throws RecognitionException {
         Token ID3=null;
 
         try {
-            // Pascal.g:231:5: ({...}? => ID ':=' intExpression )
-            // Pascal.g:231:7: {...}? => ID ':=' intExpression
+            // Pascal.g:232:5: ({...}? => ID ':=' intExpression )
+            // Pascal.g:232:7: {...}? => ID ':=' intExpression
             {
             if ( !((intVars.containsKey(input.LT(1).getText()))) ) {
                 throw new FailedPredicateException(input, "variableAssignment", "intVars.containsKey(input.LT(1).getText())");
             }
-            ID3=(Token)match(input,ID,FOLLOW_ID_in_variableAssignment468); 
-            match(input,36,FOLLOW_36_in_variableAssignment470); 
-            pushFollow(FOLLOW_intExpression_in_variableAssignment472);
+            ID3=(Token)match(input,ID,FOLLOW_ID_in_variableAssignment469); 
+            match(input,37,FOLLOW_37_in_variableAssignment471); 
+            pushFollow(FOLLOW_intExpression_in_variableAssignment473);
             intExpression();
 
             state._fsp--;
@@ -1119,40 +1121,40 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intExpression"
-    // Pascal.g:239:1: intExpression : intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* ;
+    // Pascal.g:240:1: intExpression : intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* ;
     public final void intExpression() throws RecognitionException {
         try {
-            // Pascal.g:240:5: ( intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* )
-            // Pascal.g:240:7: intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
+            // Pascal.g:241:5: ( intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* )
+            // Pascal.g:241:7: intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
             {
-            pushFollow(FOLLOW_intMultExpression_in_intExpression500);
+            pushFollow(FOLLOW_intMultExpression_in_intExpression501);
             intMultExpression();
 
             state._fsp--;
 
-            // Pascal.g:241:7: ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
+            // Pascal.g:242:7: ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
             loop14:
             do {
                 int alt14=3;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==37) ) {
+                if ( (LA14_0==38) ) {
                     alt14=1;
                 }
-                else if ( (LA14_0==38) ) {
+                else if ( (LA14_0==39) ) {
                     alt14=2;
                 }
 
 
                 switch (alt14) {
             	case 1 :
-            	    // Pascal.g:241:8: ( '+' intMultExpression )
+            	    // Pascal.g:242:8: ( '+' intMultExpression )
             	    {
-            	    // Pascal.g:241:8: ( '+' intMultExpression )
-            	    // Pascal.g:241:9: '+' intMultExpression
+            	    // Pascal.g:242:8: ( '+' intMultExpression )
+            	    // Pascal.g:242:9: '+' intMultExpression
             	    {
-            	    match(input,37,FOLLOW_37_in_intExpression510); 
-            	    pushFollow(FOLLOW_intMultExpression_in_intExpression512);
+            	    match(input,38,FOLLOW_38_in_intExpression511); 
+            	    pushFollow(FOLLOW_intMultExpression_in_intExpression513);
             	    intMultExpression();
 
             	    state._fsp--;
@@ -1168,13 +1170,13 @@ public class PascalParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // Pascal.g:246:11: ( '-' intMultExpression )
+            	    // Pascal.g:247:11: ( '-' intMultExpression )
             	    {
-            	    // Pascal.g:246:11: ( '-' intMultExpression )
-            	    // Pascal.g:246:12: '-' intMultExpression
+            	    // Pascal.g:247:11: ( '-' intMultExpression )
+            	    // Pascal.g:247:12: '-' intMultExpression
             	    {
-            	    match(input,38,FOLLOW_38_in_intExpression537); 
-            	    pushFollow(FOLLOW_intMultExpression_in_intExpression539);
+            	    match(input,39,FOLLOW_39_in_intExpression538); 
+            	    pushFollow(FOLLOW_intMultExpression_in_intExpression540);
             	    intMultExpression();
 
             	    state._fsp--;
@@ -1211,40 +1213,40 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intMultExpression"
-    // Pascal.g:255:1: intMultExpression : intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* ;
+    // Pascal.g:256:1: intMultExpression : intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* ;
     public final void intMultExpression() throws RecognitionException {
         try {
-            // Pascal.g:256:2: ( intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* )
-            // Pascal.g:256:4: intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
+            // Pascal.g:257:2: ( intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* )
+            // Pascal.g:257:4: intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
             {
-            pushFollow(FOLLOW_intValue_in_intMultExpression576);
+            pushFollow(FOLLOW_intValue_in_intMultExpression577);
             intValue();
 
             state._fsp--;
 
-            // Pascal.g:257:8: ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
+            // Pascal.g:258:8: ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
             loop15:
             do {
                 int alt15=3;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==39) ) {
+                if ( (LA15_0==40) ) {
                     alt15=1;
                 }
-                else if ( (LA15_0==40) ) {
+                else if ( (LA15_0==41) ) {
                     alt15=2;
                 }
 
 
                 switch (alt15) {
             	case 1 :
-            	    // Pascal.g:257:9: ( '*' intValue )
+            	    // Pascal.g:258:9: ( '*' intValue )
             	    {
-            	    // Pascal.g:257:9: ( '*' intValue )
-            	    // Pascal.g:257:10: '*' intValue
+            	    // Pascal.g:258:9: ( '*' intValue )
+            	    // Pascal.g:258:10: '*' intValue
             	    {
-            	    match(input,39,FOLLOW_39_in_intMultExpression587); 
-            	    pushFollow(FOLLOW_intValue_in_intMultExpression589);
+            	    match(input,40,FOLLOW_40_in_intMultExpression588); 
+            	    pushFollow(FOLLOW_intValue_in_intMultExpression590);
             	    intValue();
 
             	    state._fsp--;
@@ -1260,13 +1262,13 @@ public class PascalParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // Pascal.g:262:12: ( 'div' i3= intValue )
+            	    // Pascal.g:263:12: ( 'div' i3= intValue )
             	    {
-            	    // Pascal.g:262:12: ( 'div' i3= intValue )
-            	    // Pascal.g:262:13: 'div' i3= intValue
+            	    // Pascal.g:263:12: ( 'div' i3= intValue )
+            	    // Pascal.g:263:13: 'div' i3= intValue
             	    {
-            	    match(input,40,FOLLOW_40_in_intMultExpression613); 
-            	    pushFollow(FOLLOW_intValue_in_intMultExpression617);
+            	    match(input,41,FOLLOW_41_in_intMultExpression614); 
+            	    pushFollow(FOLLOW_intValue_in_intMultExpression618);
             	    intValue();
 
             	    state._fsp--;
@@ -1303,14 +1305,14 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intValue"
-    // Pascal.g:270:1: intValue : ( NUMBER | {...}? => ID | '(' intExpression ')' );
+    // Pascal.g:271:1: intValue : ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' );
     public final void intValue() throws RecognitionException {
         Token NUMBER4=null;
         Token ID5=null;
 
         try {
-            // Pascal.g:271:2: ( NUMBER | {...}? => ID | '(' intExpression ')' )
-            int alt16=3;
+            // Pascal.g:272:2: ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' )
+            int alt16=4;
             int LA16_0 = input.LA(1);
 
             if ( (LA16_0==NUMBER) ) {
@@ -1319,8 +1321,11 @@ public class PascalParser extends Parser {
             else if ( (LA16_0==ID) && ((intVars.containsKey(input.LT(1).getText())))) {
                 alt16=2;
             }
-            else if ( (LA16_0==16) ) {
+            else if ( (LA16_0==17) ) {
                 alt16=3;
+            }
+            else if ( (LA16_0==READ) ) {
+                alt16=4;
             }
             else {
                 NoViableAltException nvae =
@@ -1330,9 +1335,9 @@ public class PascalParser extends Parser {
             }
             switch (alt16) {
                 case 1 :
-                    // Pascal.g:271:4: NUMBER
+                    // Pascal.g:272:4: NUMBER
                     {
-                    NUMBER4=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_intValue666); 
+                    NUMBER4=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_intValue667); 
 
                     		code += "ldc " + Integer.parseInt((NUMBER4!=null?NUMBER4.getText():null)) + "\n";	
                     		recordPush();
@@ -1341,12 +1346,12 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // Pascal.g:276:4: {...}? => ID
+                    // Pascal.g:277:4: {...}? => ID
                     {
                     if ( !((intVars.containsKey(input.LT(1).getText()))) ) {
                         throw new FailedPredicateException(input, "intValue", "intVars.containsKey(input.LT(1).getText())");
                     }
-                    ID5=(Token)match(input,ID,FOLLOW_ID_in_intValue677); 
+                    ID5=(Token)match(input,ID,FOLLOW_ID_in_intValue678); 
 
                               	code += "iload " + intVars.get((ID5!=null?ID5.getText():null)) + "\n";
                     		recordPush();
@@ -1355,15 +1360,29 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // Pascal.g:281:8: '(' intExpression ')'
+                    // Pascal.g:282:8: '(' intExpression ')'
                     {
-                    match(input,16,FOLLOW_16_in_intValue695); 
-                    pushFollow(FOLLOW_intExpression_in_intValue697);
+                    match(input,17,FOLLOW_17_in_intValue696); 
+                    pushFollow(FOLLOW_intExpression_in_intValue698);
                     intExpression();
 
                     state._fsp--;
 
-                    match(input,17,FOLLOW_17_in_intValue699); 
+                    match(input,18,FOLLOW_18_in_intValue700); 
+
+                    }
+                    break;
+                case 4 :
+                    // Pascal.g:283:4: READ '()'
+                    {
+                    match(input,READ,FOLLOW_READ_in_intValue705); 
+                    match(input,42,FOLLOW_42_in_intValue707); 
+
+                    		code += "aload " + bufferedReaderIdentifier + "\n";
+                              	recordPush();
+                              	code += "invokevirtual java/io/BufferedReader/readLine()Ljava/lang/String;\n"; 
+                    		code += "invokestatic java/lang/Integer/parseInt(Ljava/lang/String;)I\n";	
+                    	
 
                     }
                     break;
@@ -1385,91 +1404,93 @@ public class PascalParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_11_in_program27 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ID_in_program29 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_program31 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_13_in_program35 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_variableDeclaration_in_program38 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_14_in_program45 = new BitSet(new long[]{0x0000000000248070L});
-    public static final BitSet FOLLOW_statement_in_program49 = new BitSet(new long[]{0x0000000000248070L});
-    public static final BitSet FOLLOW_15_in_program54 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_writeOperation_in_statement67 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_statement68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_variableAssignment_in_statement73 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_statement74 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_program27 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ID_in_program29 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_program31 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_14_in_program35 = new BitSet(new long[]{0x0000000000008010L});
+    public static final BitSet FOLLOW_variableDeclaration_in_program38 = new BitSet(new long[]{0x0000000000008010L});
+    public static final BitSet FOLLOW_15_in_program45 = new BitSet(new long[]{0x0000000000490070L});
+    public static final BitSet FOLLOW_statement_in_program49 = new BitSet(new long[]{0x0000000000490070L});
+    public static final BitSet FOLLOW_16_in_program54 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_writeOperation_in_statement67 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_statement68 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_variableAssignment_in_statement73 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_statement74 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ifOperation_in_statement79 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_whileOperation_in_statement84 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WRITE_in_writeOperation94 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_writeOperation96 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_writeOperation97 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_writeOperation99 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WRITELN_in_writeOperation107 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_writeOperation109 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_writeOperation110 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_writeOperation112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_whileOperation130 = new BitSet(new long[]{0x0000000200010390L});
-    public static final BitSet FOLLOW_logicExpression_in_whileOperation135 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_whileOperation139 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_whileOperation141 = new BitSet(new long[]{0x0000000000340070L});
-    public static final BitSet FOLLOW_statement_in_whileOperation147 = new BitSet(new long[]{0x0000000000340070L});
-    public static final BitSet FOLLOW_20_in_whileOperation154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ifOperation171 = new BitSet(new long[]{0x0000000200010390L});
-    public static final BitSet FOLLOW_logicExpression_in_ifOperation175 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ifOperation178 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ifOperation180 = new BitSet(new long[]{0x0000000000B40070L});
-    public static final BitSet FOLLOW_statement_in_ifOperation186 = new BitSet(new long[]{0x0000000000B40070L});
-    public static final BitSet FOLLOW_20_in_ifOperation199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ifOperation206 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ifOperation208 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ifOperation210 = new BitSet(new long[]{0x0000000000340070L});
-    public static final BitSet FOLLOW_statement_in_ifOperation216 = new BitSet(new long[]{0x0000000000340070L});
-    public static final BitSet FOLLOW_20_in_ifOperation220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_logicOrExpression_in_logicExpression239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_logicAndExpression_in_logicOrExpression256 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_25_in_logicOrExpression268 = new BitSet(new long[]{0x0000000200010390L});
-    public static final BitSet FOLLOW_logicAndExpression_in_logicOrExpression274 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_logicCompareExpression_in_logicAndExpression301 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_26_in_logicAndExpression313 = new BitSet(new long[]{0x0000000200010390L});
-    public static final BitSet FOLLOW_logicCompareExpression_in_logicAndExpression318 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression335 = new BitSet(new long[]{0x00000001F8000000L});
-    public static final BitSet FOLLOW_27_in_logicCompareExpression341 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_logicCompareExpression350 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_logicCompareExpression358 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_logicCompareExpression366 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_logicCompareExpression374 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_logicCompareExpression382 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_logicCompareExpression395 = new BitSet(new long[]{0x0000000200010390L});
-    public static final BitSet FOLLOW_logicExpression_in_logicCompareExpression396 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_logicCompareExpression399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_logicCompareExpression408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_logicCompareExpression415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_variableDeclaration428 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_variableDeclaration430 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_variableDeclaration432 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_variableDeclaration451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_variableAssignment468 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_variableAssignment470 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_variableAssignment472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_intMultExpression_in_intExpression500 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_37_in_intExpression510 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intMultExpression_in_intExpression512 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_38_in_intExpression537 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intMultExpression_in_intExpression539 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_intValue_in_intMultExpression576 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_39_in_intMultExpression587 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intValue_in_intMultExpression589 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_40_in_intMultExpression613 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intValue_in_intMultExpression617 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_NUMBER_in_intValue666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_intValue677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_intValue695 = new BitSet(new long[]{0x0000000000010210L});
-    public static final BitSet FOLLOW_intExpression_in_intValue697 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_intValue699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WRITE_in_writeOperation94 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_writeOperation96 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_writeOperation97 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_writeOperation99 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WRITELN_in_writeOperation107 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_writeOperation109 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_writeOperation110 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_writeOperation112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_whileOperation131 = new BitSet(new long[]{0x0000000400020790L});
+    public static final BitSet FOLLOW_logicExpression_in_whileOperation136 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_whileOperation140 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_whileOperation142 = new BitSet(new long[]{0x0000000000680070L});
+    public static final BitSet FOLLOW_statement_in_whileOperation148 = new BitSet(new long[]{0x0000000000680070L});
+    public static final BitSet FOLLOW_21_in_whileOperation155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ifOperation172 = new BitSet(new long[]{0x0000000400020790L});
+    public static final BitSet FOLLOW_logicExpression_in_ifOperation176 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ifOperation179 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ifOperation181 = new BitSet(new long[]{0x0000000001680070L});
+    public static final BitSet FOLLOW_statement_in_ifOperation187 = new BitSet(new long[]{0x0000000001680070L});
+    public static final BitSet FOLLOW_21_in_ifOperation200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ifOperation207 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ifOperation209 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ifOperation211 = new BitSet(new long[]{0x0000000000680070L});
+    public static final BitSet FOLLOW_statement_in_ifOperation217 = new BitSet(new long[]{0x0000000000680070L});
+    public static final BitSet FOLLOW_21_in_ifOperation221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_logicOrExpression_in_logicExpression240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_logicAndExpression_in_logicOrExpression257 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_26_in_logicOrExpression269 = new BitSet(new long[]{0x0000000400020790L});
+    public static final BitSet FOLLOW_logicAndExpression_in_logicOrExpression275 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_logicCompareExpression_in_logicAndExpression302 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_27_in_logicAndExpression314 = new BitSet(new long[]{0x0000000400020790L});
+    public static final BitSet FOLLOW_logicCompareExpression_in_logicAndExpression319 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression336 = new BitSet(new long[]{0x00000003F0000000L});
+    public static final BitSet FOLLOW_28_in_logicCompareExpression342 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_logicCompareExpression351 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_logicCompareExpression359 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_logicCompareExpression367 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_logicCompareExpression375 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_logicCompareExpression383 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_logicCompareExpression385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_logicCompareExpression396 = new BitSet(new long[]{0x0000000400020790L});
+    public static final BitSet FOLLOW_logicExpression_in_logicCompareExpression397 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_logicCompareExpression400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_logicCompareExpression409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_logicCompareExpression416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_variableDeclaration429 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_variableDeclaration431 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_variableDeclaration433 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_variableDeclaration452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_variableAssignment469 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_variableAssignment471 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_variableAssignment473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_intMultExpression_in_intExpression501 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_38_in_intExpression511 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intMultExpression_in_intExpression513 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_39_in_intExpression538 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intMultExpression_in_intExpression540 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_intValue_in_intMultExpression577 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_40_in_intMultExpression588 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intValue_in_intMultExpression590 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_41_in_intMultExpression614 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intValue_in_intMultExpression618 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_NUMBER_in_intValue667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_intValue678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_intValue696 = new BitSet(new long[]{0x0000000000020610L});
+    public static final BitSet FOLLOW_intExpression_in_intValue698 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_intValue700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_READ_in_intValue705 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42_in_intValue707 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -94,6 +94,7 @@ writeOperation
 	}
 ;
 
+
 whileOperation
 @init {
 	int goTrue = ++labelCount;
@@ -279,10 +280,18 @@ intValue
 		recordPush();
       	}
     	| '(' intExpression ')'
+	| READ '()'
+	{
+		code += "aload " + bufferedReaderIdentifier + "\n";
+          	recordPush();
+          	code += "invokevirtual java/io/BufferedReader/readLine()Ljava/lang/String;\n"; 
+		code += "invokestatic java/lang/Integer/parseInt(Ljava/lang/String;)I\n";	
+	}
  	;
 
 WRITE	: 'write';
 WRITELN : 'writeln';
+READ	: 'read';
 TRUE	: 'true';
 FALSE	: 'false';
 ID	: ('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*;
