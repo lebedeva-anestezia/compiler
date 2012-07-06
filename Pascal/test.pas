@@ -6,7 +6,7 @@ var
 
 begin
 	x := 2;
-	y := x * 2 - 1;
+	y := x * 2 - read();
 	writeln(y);
 	z := 5 * 2 - 10 div 3 + 1;
 	writeln(z);

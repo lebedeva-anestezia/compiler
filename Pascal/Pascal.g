@@ -224,6 +224,10 @@ variableDeclaration
 	: ID ':' 'Integer'
         {
             intVars.put($ID.text, ++localVariables);
+	    code += "ldc 0\n";	
+	    recordPush();
+	    code += "istore " + localVariables + "\n";
+            recordPop();
         }
        ';'
 ;

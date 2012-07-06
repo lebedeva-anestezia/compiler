@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 16:19:16
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-07 01:36:58
 
 
 import java.util.Collections;
@@ -1065,6 +1065,10 @@ public class PascalParser extends Parser {
             match(input,36,FOLLOW_36_in_variableDeclaration433); 
 
                         intVars.put((ID2!=null?ID2.getText():null), ++localVariables);
+            	    code += "ldc 0\n";	
+            	    recordPush();
+            	    code += "istore " + localVariables + "\n";
+                        recordPop();
                     
             match(input,13,FOLLOW_13_in_variableDeclaration452); 
 
@@ -1083,13 +1087,13 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "variableAssignment"
-    // Pascal.g:231:1: variableAssignment : {...}? => ID ':=' intExpression ;
+    // Pascal.g:235:1: variableAssignment : {...}? => ID ':=' intExpression ;
     public final void variableAssignment() throws RecognitionException {
         Token ID3=null;
 
         try {
-            // Pascal.g:232:5: ({...}? => ID ':=' intExpression )
-            // Pascal.g:232:7: {...}? => ID ':=' intExpression
+            // Pascal.g:236:5: ({...}? => ID ':=' intExpression )
+            // Pascal.g:236:7: {...}? => ID ':=' intExpression
             {
             if ( !((intVars.containsKey(input.LT(1).getText()))) ) {
                 throw new FailedPredicateException(input, "variableAssignment", "intVars.containsKey(input.LT(1).getText())");
@@ -1121,18 +1125,18 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intExpression"
-    // Pascal.g:240:1: intExpression : intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* ;
+    // Pascal.g:244:1: intExpression : intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* ;
     public final void intExpression() throws RecognitionException {
         try {
-            // Pascal.g:241:5: ( intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* )
-            // Pascal.g:241:7: intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
+            // Pascal.g:245:5: ( intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )* )
+            // Pascal.g:245:7: intMultExpression ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
             {
             pushFollow(FOLLOW_intMultExpression_in_intExpression501);
             intMultExpression();
 
             state._fsp--;
 
-            // Pascal.g:242:7: ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
+            // Pascal.g:246:7: ( ( '+' intMultExpression ) | ( '-' intMultExpression ) )*
             loop14:
             do {
                 int alt14=3;
@@ -1148,10 +1152,10 @@ public class PascalParser extends Parser {
 
                 switch (alt14) {
             	case 1 :
-            	    // Pascal.g:242:8: ( '+' intMultExpression )
+            	    // Pascal.g:246:8: ( '+' intMultExpression )
             	    {
-            	    // Pascal.g:242:8: ( '+' intMultExpression )
-            	    // Pascal.g:242:9: '+' intMultExpression
+            	    // Pascal.g:246:8: ( '+' intMultExpression )
+            	    // Pascal.g:246:9: '+' intMultExpression
             	    {
             	    match(input,38,FOLLOW_38_in_intExpression511); 
             	    pushFollow(FOLLOW_intMultExpression_in_intExpression513);
@@ -1170,10 +1174,10 @@ public class PascalParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // Pascal.g:247:11: ( '-' intMultExpression )
+            	    // Pascal.g:251:11: ( '-' intMultExpression )
             	    {
-            	    // Pascal.g:247:11: ( '-' intMultExpression )
-            	    // Pascal.g:247:12: '-' intMultExpression
+            	    // Pascal.g:251:11: ( '-' intMultExpression )
+            	    // Pascal.g:251:12: '-' intMultExpression
             	    {
             	    match(input,39,FOLLOW_39_in_intExpression538); 
             	    pushFollow(FOLLOW_intMultExpression_in_intExpression540);
@@ -1213,18 +1217,18 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intMultExpression"
-    // Pascal.g:256:1: intMultExpression : intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* ;
+    // Pascal.g:260:1: intMultExpression : intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* ;
     public final void intMultExpression() throws RecognitionException {
         try {
-            // Pascal.g:257:2: ( intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* )
-            // Pascal.g:257:4: intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
+            // Pascal.g:261:2: ( intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )* )
+            // Pascal.g:261:4: intValue ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
             {
             pushFollow(FOLLOW_intValue_in_intMultExpression577);
             intValue();
 
             state._fsp--;
 
-            // Pascal.g:258:8: ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
+            // Pascal.g:262:8: ( ( '*' intValue ) | ( 'div' i3= intValue ) )*
             loop15:
             do {
                 int alt15=3;
@@ -1240,10 +1244,10 @@ public class PascalParser extends Parser {
 
                 switch (alt15) {
             	case 1 :
-            	    // Pascal.g:258:9: ( '*' intValue )
+            	    // Pascal.g:262:9: ( '*' intValue )
             	    {
-            	    // Pascal.g:258:9: ( '*' intValue )
-            	    // Pascal.g:258:10: '*' intValue
+            	    // Pascal.g:262:9: ( '*' intValue )
+            	    // Pascal.g:262:10: '*' intValue
             	    {
             	    match(input,40,FOLLOW_40_in_intMultExpression588); 
             	    pushFollow(FOLLOW_intValue_in_intMultExpression590);
@@ -1262,10 +1266,10 @@ public class PascalParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // Pascal.g:263:12: ( 'div' i3= intValue )
+            	    // Pascal.g:267:12: ( 'div' i3= intValue )
             	    {
-            	    // Pascal.g:263:12: ( 'div' i3= intValue )
-            	    // Pascal.g:263:13: 'div' i3= intValue
+            	    // Pascal.g:267:12: ( 'div' i3= intValue )
+            	    // Pascal.g:267:13: 'div' i3= intValue
             	    {
             	    match(input,41,FOLLOW_41_in_intMultExpression614); 
             	    pushFollow(FOLLOW_intValue_in_intMultExpression618);
@@ -1305,13 +1309,13 @@ public class PascalParser extends Parser {
 
 
     // $ANTLR start "intValue"
-    // Pascal.g:271:1: intValue : ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' );
+    // Pascal.g:275:1: intValue : ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' );
     public final void intValue() throws RecognitionException {
         Token NUMBER4=null;
         Token ID5=null;
 
         try {
-            // Pascal.g:272:2: ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' )
+            // Pascal.g:276:2: ( NUMBER | {...}? => ID | '(' intExpression ')' | READ '()' )
             int alt16=4;
             int LA16_0 = input.LA(1);
 
@@ -1335,7 +1339,7 @@ public class PascalParser extends Parser {
             }
             switch (alt16) {
                 case 1 :
-                    // Pascal.g:272:4: NUMBER
+                    // Pascal.g:276:4: NUMBER
                     {
                     NUMBER4=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_intValue667); 
 
@@ -1346,7 +1350,7 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // Pascal.g:277:4: {...}? => ID
+                    // Pascal.g:281:4: {...}? => ID
                     {
                     if ( !((intVars.containsKey(input.LT(1).getText()))) ) {
                         throw new FailedPredicateException(input, "intValue", "intVars.containsKey(input.LT(1).getText())");
@@ -1360,7 +1364,7 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // Pascal.g:282:8: '(' intExpression ')'
+                    // Pascal.g:286:8: '(' intExpression ')'
                     {
                     match(input,17,FOLLOW_17_in_intValue696); 
                     pushFollow(FOLLOW_intExpression_in_intValue698);
@@ -1373,7 +1377,7 @@ public class PascalParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // Pascal.g:283:4: READ '()'
+                    // Pascal.g:287:4: READ '()'
                     {
                     match(input,READ,FOLLOW_READ_in_intValue705); 
                     match(input,42,FOLLOW_42_in_intValue707); 

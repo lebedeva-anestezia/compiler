@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-06 16:19:16
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Pascal.g 2012-07-07 01:36:59
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -706,8 +706,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = WRITE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:292:7: ( 'write' )
-            // Pascal.g:292:9: 'write'
+            // Pascal.g:296:7: ( 'write' )
+            // Pascal.g:296:9: 'write'
             {
             match("write"); 
 
@@ -727,8 +727,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = WRITELN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:293:9: ( 'writeln' )
-            // Pascal.g:293:11: 'writeln'
+            // Pascal.g:297:9: ( 'writeln' )
+            // Pascal.g:297:11: 'writeln'
             {
             match("writeln"); 
 
@@ -748,8 +748,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = READ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:294:6: ( 'read' )
-            // Pascal.g:294:8: 'read'
+            // Pascal.g:298:6: ( 'read' )
+            // Pascal.g:298:8: 'read'
             {
             match("read"); 
 
@@ -769,8 +769,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:295:6: ( 'true' )
-            // Pascal.g:295:8: 'true'
+            // Pascal.g:299:6: ( 'true' )
+            // Pascal.g:299:8: 'true'
             {
             match("true"); 
 
@@ -790,8 +790,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:296:7: ( 'false' )
-            // Pascal.g:296:9: 'false'
+            // Pascal.g:300:7: ( 'false' )
+            // Pascal.g:300:9: 'false'
             {
             match("false"); 
 
@@ -811,8 +811,8 @@ public class PascalLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:297:4: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-            // Pascal.g:297:6: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // Pascal.g:301:4: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+            // Pascal.g:301:6: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -823,7 +823,7 @@ public class PascalLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // Pascal.g:297:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+            // Pascal.g:301:28: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
             loop1:
             do {
                 int alt1=2;
@@ -872,10 +872,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:298:8: ( ( '0' .. '9' )+ )
-            // Pascal.g:298:10: ( '0' .. '9' )+
+            // Pascal.g:302:8: ( ( '0' .. '9' )+ )
+            // Pascal.g:302:10: ( '0' .. '9' )+
             {
-            // Pascal.g:298:10: ( '0' .. '9' )+
+            // Pascal.g:302:10: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -889,7 +889,7 @@ public class PascalLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // Pascal.g:298:11: '0' .. '9'
+            	    // Pascal.g:302:11: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -921,10 +921,10 @@ public class PascalLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // Pascal.g:299:9: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // Pascal.g:299:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // Pascal.g:303:9: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // Pascal.g:303:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            // Pascal.g:299:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // Pascal.g:303:11: ( ' ' | '\\t' | '\\n' | '\\r' )+
             int cnt3=0;
             loop3:
             do {
